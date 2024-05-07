@@ -25,4 +25,16 @@ M.dap_python = {
   }
 }
 
+M.undotree = {
+  plugin = true,
+  n = {
+    ["<leader>u"] = {
+      "<cmd> UndotreeToggle <CR>",
+      "Toggle undotree"
+    }
+  }
+}
+
+require "core.utils".load_mappings("undotree")
+
 return M

@@ -1,7 +1,14 @@
 local plugins = {
-  -- {
-  --  "iamcco/markdown-preview.nvim"
-  -- },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && yarn install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+  },
+  { "nvim-neotest/nvim-nio" },
   {
     "rcarriga/nvim-dap-ui",
     event = "VeryLazy",
@@ -76,6 +83,10 @@ local plugins = {
         "pyright",
       }
     }
-  }
+  },
+  {
+    "mbbill/undotree",
+    lazy = false,
+  },
 }
 return plugins
